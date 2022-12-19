@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .form__input {
+        @apply rounded-lg ring-1 ring-gray-200 outline-none py-1 px-2 focus:ring-1 focus:ring-black placeholder:text-sm;
+    }
+}
+
+@layer base {
+    button {
+        @apply flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-2 px-4 rounded-lg;
+    }
+}
