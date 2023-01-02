@@ -1,11 +1,29 @@
 import { Cert } from './Cert';
-import React from 'react'
+import React, { useState } from 'react'
 import pic from '../assets/default1.png';
 import { BsArrowLeft } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom';
 
 function Admin() {
     const navigate = useNavigate();
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isConnected, setWalletIsConnected] = useState(false);
+    
+    if (!isConnected) {
+        return (
+            <div className='h-screen justify-center items-center'>
+                <button>Connect Admin</button>
+            </div>
+        )
+    }
+
+    if (!isAdmin) {
+        return (
+            <div className='h-screen justify-center items-center'>
+                <h1>Connect admin wallet to access</h1>
+            </div>
+        )
+    }
     
     return (
         <div className='h-screen'>
